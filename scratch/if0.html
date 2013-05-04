@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>
+      Scratch: if
+    </title>
+    <!--link rel="stylesheet" href="if.css" /-->
+    <script src="../libs/jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+
+    <h2>What's your age?</h2>
+
+    <p>
+      <input id="age" type="text" />
+      <input id="button" type="submit" />
+    </p>
+
+    <p id="answer">
+    </p>
+
+    <script>
+
+      $('#button').on('click', function() {
+
+        var age = $('#age').val();
+
+        if (age.trim() == '') {
+          $('#answer').text("you have not entered anything!");
+          return;
+        }
+
+        age = parseInt(age, 10);
+
+        if (age <= 5) {
+          $('#answer').text("you're a toddler!");
+          return;
+        }
+        if (age > 5 && age < 18) {
+          $('#answer').text("you're a child!");
+          return;
+        }
+        if (age >= 18 && age < 100) {
+          $('#answer').text("you're a adult!");
+          return;
+        }
+        $('#answer').text("you're very old!");
+      });
+    </script>
+  </body>
+<html>
