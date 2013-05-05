@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>
+      Scratch: for
+    </title>
+    <!--link rel="stylesheet" href="if.css" /-->
+    <script src="../libs/jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+
+    <h2>1 to 10</h2>
+
+    <p id="output"></p>
+
+    <script>
+
+      var length = 10;
+
+      for (var i = 1; i < length; i = i + 2) {
+        $('#output').append($('<div>hello ' + i + '</div>'));
+      }
+    </script>
+  </body>
+<html>
