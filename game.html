@@ -9,69 +9,19 @@
   <body>
 
     <table class="grid">
-      <tr><!-- table row -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr><!-- table row -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr><!-- table row -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr><!-- table row -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr><!-- table row -->
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
     </table>
 
     <script>
+      var w = 14;
+      var h = 14;
+
+      for (var i = 0; i < h; i++) {
+        var tr = $('table.grid').append($('<tr>'));
+        for (var ii = 0; ii < w; ii++) {
+          $('tr:last-child').append('<td>');
+        }
+      }
+
       var x = 0;
       var y = 4;
 
