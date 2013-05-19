@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>
+      Scratch: types
+    </title>
+    <style>
+      p { margin: 0; padding: 0; }
+    </style>
+    <!--link rel="stylesheet" href="if.css" /-->
+    <script src="../libs/jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+
+    <h2>Javascript types</h2>
+
+    <script>
+
+      function printHeader(text) {
+        $('body').append($('<h3>' + text + '</h3>'));
+      }
+      function print(input, jsonify) {
+        if (jsonify) {
+          $('body').append($('<p>' + JSON.stringify(input) + '</p>'));
+        }
+        else {
+          $('body').append($('<p>' + input.toString() + '</p>'));
+        }
+      }
+
+      printHeader("numbers");
+
+      print(1);
+      print(1 + 1);
+
+      printHeader("strings");
+
+      print("Taiga");
+      print('John');
+      print('Hello' + ' ' + "world" + "" + "!");
+
+      var i = 3;
+      print('Step ' + i);
+      print(i + 'rd Step');
+
+      print('Step ' + i * 3);
+
+      printHeader("booleans");
+
+      print(true);
+      print(false);
+
+      if (true) print("Truth!");
+      if (false) print("Lie!");
+
+      print("Taiga".length > 3);
+      print("Taiga".length < 3);
+
+      printHeader("functions");
+
+      function add10(x) { return x + 10; }
+      var add20 = function(x) { return x + 20; }
+      print(add10(5));
+      print(add10);
+
+      printHeader("arrays");
+
+      print([ 1, 2, 3, 4 ]);
+      print([ 1, 2, 3, 4 ], true);
+
+      print([ "Soccer", "Hockey" ], true);
+
+      var a = [ "Taiga", "Comet", "John" ];
+      print(a[0]);
+      print(a[1]);
+      print(a[2]);
+
+      for (var i = 0; i < a.length; i++) {
+        print(a[i]);
+      }
+
+      print(a.join(" + "));
+
+      printHeader("objects");
+
+      var o = { name: "Taiga", age: 30 };
+      print(o, true);
+
+      print(o.name);
+      print(o.age);
+
+      o.code = function() { return this.name + " " + this.age; };
+
+      print(o.code);
+      print(o.code());
+
+    </script>
+  </body>
+<html>
