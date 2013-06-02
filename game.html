@@ -27,7 +27,7 @@
       var car = { x: 0, y: 9 };
 
       car.show = function() {
-
+      
         console.log("x: " + this.x + " / y: " + this.y);
 
         $('td').css('background-color', 'white');
@@ -35,26 +35,32 @@
         var cell = $(row).find('td')[this.x];
         $(cell).css('background-color', 'red');
       };
-
+      car.move = function(direction) {
+        console.log(direction)
+      }; 
       car.show();
 
       $(window).on('keyup', function(ev) {
 
         if (ev.keyCode === 37) { // left
-          car.x = car.x - 1;
-          if (car.x < 0) { car.x = 0; }
+          //car.x = car.x - 1;
+          //if (car.x < 0) { car.x = 0; }
+          car.move('left');
         }
         else if (ev.keyCode === 38) { // up
-          car.y = car.y - 1;
-          if (car.y < 0) { car.y = 0; }
+          //car.y = car.y - 1;
+          //if (car.y < 0) { car.y = 0; }
+          car.move('up');
         }
         else if (ev.keyCode === 39) { // right
-          car.x = car.x + 1;
-          if (car.x > w - 1) { car.x = w - 1; }
+          //car.x = car.x + 1;
+          //if (car.x > w - 1) { car.x = w - 1; }
+          car.move('right');
         }
         else if (ev.keyCode === 40) { // down
-          car.y = car.y + 1;
-          if (car.y > h - 1) { car.y = h - 1; }
+          //car.y = car.y + 1;
+          //if (car.y > h - 1) { car.y = h - 1; }
+          car.move('down');
         }
 
         car.show();
