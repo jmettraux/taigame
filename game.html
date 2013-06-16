@@ -27,7 +27,7 @@
       var car = { x: 0, y: 9 };
 
       car.show = function() {
-      
+
         console.log("x: " + this.x + " / y: " + this.y);
 
         $('td').css('background-color', 'white');
@@ -37,7 +37,7 @@
       };
       car.move = function(direction) {
         console.log(direction)
-      }; 
+      };
       car.show();
 
       $(window).on('keyup', function(ev) {
