@@ -28,7 +28,7 @@
 
       car.show = function() {
 
-        console.log("x: " + this.x + " / y: " + this.y);
+        //console.log("x: " + this.x + " / y: " + this.y);
 
         $('td').css('background-color', 'white');
         var row = $('tr')[this.y];
@@ -38,10 +38,10 @@
 
       car.move = function(direction) {
 
-        if (direction == 'left') this.x = this.x - 1;
-        else if (direction == 'up') this.y = this.y - 1;
-        else if (direction == 'right') this.x = this.x + 1;
-        else if (direction == 'down') this.y = this.y + 1;
+        if (direction === 'left') this.x = this.x - 1;
+        else if (direction === 'up') this.y = this.y - 1;
+        else if (direction === 'right') this.x = this.x + 1;
+        else if (direction === 'down') this.y = this.y + 1;
 
         if (this.x < 0) { this.x = 0; }
         else if (this.x > w - 1) { this.x = w - 1; }
