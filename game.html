@@ -22,19 +22,25 @@
         }
       }
 
-      //var car = {};
-      //car.x = 0; car.y = 9;
-      var car = { x: 0, y: 9 };
+      var world = {};
 
-      car.show = function() {
+      world.display = function() {
 
-        //console.log("x: " + this.x + " / y: " + this.y);
+        // make all cells white
 
         $('td').css('background-color', 'white');
-        var row = $('tr')[this.y];
-        var cell = $(row).find('td')[this.x];
-        $(cell).css('background-color', 'red');
-      };
+
+        // display car
+
+        var carRow = $('tr')[this.car.y];
+        var carCell = $(carRow).find('td')[this.car.x];
+        $(carCell).css('background-color', 'red');
+      }
+
+      //
+      // car concept
+
+      var car = { x: 0, y: 9 };
 
       car.move = function(direction) {
 
@@ -48,7 +54,13 @@
         if (this.y < 0) { this.y = 0; }
         else if (this.y > h - 1) { this.y = h - 1; }
       };
-      car.show();
+
+      world.car = car;
+
+      //
+      // change the world
+
+      world.display();
 
       $(window).on('keyup', function(ev) {
 
@@ -57,7 +69,7 @@
         else if (ev.keyCode === 39) car.move('right');
         else if (ev.keyCode === 40) car.move('down');
 
-        car.show();
+        world.display();
       });
     </script>
   </body>
